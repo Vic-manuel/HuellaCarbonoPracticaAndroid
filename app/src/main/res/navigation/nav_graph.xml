@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/inicioFragment">
+
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="com.example.huellacarbonoapp.InicioFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/action_inicioFragment_to_calculadoraFragment"
+            app:destination="@id/calculadoraFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_recomendacionesFragment"
+            app:destination="@id/recomendacionesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/calculadoraFragment"
+        android:name="com.example.huellacarbonoapp.CalculadoraFragmente"
+        android:label="Calculadora"
+        tools:layout="@layout/fragment_calculadora" >
+        <action
+            android:id="@+id/action_calculadoraFragment_to_resultadoFragment"
+            app:destination="@id/resultadoFragment" />
+        <action
+            android:id="@+id/action_calculadoraFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultadoFragment"
+        android:name="com.example.huellacarbonoapp.ResultadoFragment"
+        android:label="fragment_resultado"
+        tools:layout="@layout/fragment_resultado" >
+        <argument
+            android:name="totalC02"
+            app:argType="float" />
+        <action
+            android:id="@+id/action_resultadoFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recomendacionesFragment"
+        android:name="com.example.huellacarbonoapp.RecomendacionesFragment"
+        android:label="RecomendacionesFragment" >
+        <action
+            android:id="@+id/action_recomendacionesFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
+
+</navigation>
